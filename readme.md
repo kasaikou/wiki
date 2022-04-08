@@ -16,8 +16,8 @@
 
 2. **リポジトリの設定を変更**
     1. Projectsの作成
-        [make projects](https://github.com/streamwest-1629/repo_template/projects/new) から`issue and improve`プロジェクトを作成します．Templateは `Automated kanban` が良いかと思います（楽なので）．
-    2. [Settings](https://github.com/streamwest-1629/repo_template/projects/settings) の `Pull Requests` から `Automatically delete head branches` の項目にチェックをつけてください．
+        [make projects](https://github.com/<username>/<reponame>/projects/new) から`issue and improve`プロジェクトを作成します．Templateは `Automated kanban` が良いかと思います（楽なので）．
+    2. [Settings](https://github.com/<username>/<reponame>/projects/settings) の `Pull Requests` から `Automatically delete head branches` の項目にチェックをつけてください．
 
 3. **dockerfileの修正**
     - ビルド・デプロイ用にdocker (compose)を用いることを前提に組まれている．
@@ -44,8 +44,8 @@
 | `[Issueベース系ブランチ名]/hotfix` | `main` ブランチ以外で修正を行う必要があるときに使用するブランチ．<br/>`123-bugfix/緊急の修正/hotfix` みたいな使い方をする． | 任意のブランチ |
 
 <!-- Issue and Improve project -->
-[@issue_and_improve]:https://github.com/streamwest-1629/repo_template/projects/1 
+[@issue_and_improve]:https://github.com/<username>/<reponame>/projects/1 
 <!-- Make Issue in Issue and Improve project -->
-[improve@issue_and_improve]:https://github.com/streamwest-1629/repo_template/issues/new?labels=enhancement&template=improve.md&title=improve%2F%3C%E6%A9%9F%E8%83%BD%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=streamwest-1629/repo_template/1
+[improve@issue_and_improve]:https://github.com/<username>/<reponame>/issues/new?labels=enhancement&template=improve.md&title=improve%2F%3C%E6%A9%9F%E8%83%BD%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=<username>/<reponame>/1
 <!-- Make Issue in Issue and Improve project -->
-[bugfix@issue_and_improve]:https://github.com/streamwest-1629/repo_template/issues/new?labels=bug&template=bugfix.md&title=bugfix%2F%3C%E5%95%8F%E9%A1%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=streamwest-1629/repo_template/1
+[bugfix@issue_and_improve]:https://github.com/<username>/<reponame>/issues/new?labels=bug&template=bugfix.md&title=bugfix%2F%3C%E5%95%8F%E9%A1%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=<username>/<reponame>/1
