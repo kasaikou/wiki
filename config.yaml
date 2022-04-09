@@ -1,5 +1,47 @@
-baseURL: http://localhost
+baseURL: /
 languageCode: en-us
 title: Kasai wiki
 theme: docsy
 enableEmoji: true
+taxonomies:
+  tag: tags
+  category: categories
+blackfriday:
+  plainIDAnchors: true
+  hrefTargetBlank: true
+  angledQuotes: false
+  latexDashes: true
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: smart
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    guessSyntax: true
+params:
+  copyright: Kasai Koji (streamwest1629)
+  github_repo: https://github.com/streamwest-1629/wiki
+  taxonomy:
+    taxonomyCloud: ["tags", "categories"]
+    taxonomyCloudTitle: ["Tag Cloud", "Categories"]
+    taxonomyPageHeader: ["tags", "categories"]
+  ui:
+    breadcrumb_disable: false
+    footer_about_disable: false
+    navbar_logo: false
+    feedback: # todo: arrange it and enable
+      enable: false
+    readingtime: true
+  links:
+    developer:
+      - name: Twitter
+        url: https://twitter.com/streamwest1629
+        icon: fab fa-twitter
+      - name: Github
+        url: https://github.com/streamwest-1629
+        icon: fab fa-github
+
