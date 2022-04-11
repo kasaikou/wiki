@@ -1,0 +1,60 @@
+h1 {
+    color: #333;
+}
+
+.td-navbar {
+    a {
+        color: #333333 !important;
+    }
+}
+
+.navbar-bg-onscroll {
+    a {
+        color: white !important;
+    }
+}
+
+.td-box--white,
+#td-cover-block-2 {
+
+    h2 {
+        color: #333333;
+    }
+
+    h4,
+    a,
+    a:hover,
+    a:visited,
+    p>a,
+    p>a:hover,
+    p>a:visited,
+    i {
+        color: $primary;
+    }
+}
+
+.showcase {
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px;
+    justify-content: center;
+
+    a {
+        display: block;
+        width: 120px;
+        height: 150px;
+
+        text-align: center;
+        justify-content: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+    }
+}
+
+.td-overlay--dark::after {
+    display: none;
+}
