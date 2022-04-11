@@ -58,3 +58,8 @@ h1 {
 .td-overlay--dark::after {
     display: none;
 }
+
+#td-cover-block-0,
+#td-cover-block-2 {
+    background-position: right;
+}
