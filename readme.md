@@ -2,9 +2,9 @@
 面倒だと思うその前にtemplateを作りました．
 
 ## Issue作成（各リポジトリごとにうまい具合に設定してください）
-| Project \ Issue | improve | bugfix |
+| Project \ Issue | improve | draft | bugfix |
 | :-- | :-: | :-: |
-| [issue and improve][@issue_and_improve] | [Make Issue][improve@issue_and_improve] | [Make Issue][bugfix@issue_and_improve] |
+| [issue and improve][@issue_and_improve] | [Make Issue][improve@issue_and_improve] | [Make Issue][draft@issue_and_improve] | [Make Issue][bugfix@issue_and_improve] |
 
 ## テンプレートとして使用したらはじめにすること
 1. **readme.mdの修正，やらないと許さない**
@@ -48,4 +48,7 @@
 <!-- Make Issue in Issue and Improve project -->
 [improve@issue_and_improve]:https://github.com/streamwest-1629/wiki/issues/new?labels=enhancement&template=improve.md&title=improve%2F%3C%E6%A9%9F%E8%83%BD%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=streamwest-1629/wiki/1
 <!-- Make Issue in Issue and Improve project -->
+[draft@issue_and_improve]:https://github.com/streamwest-1629/wiki/issues/new?labels=documentation&template=draft.md&title=draft%2F%3C%E5%86%85%E5%AE%B9%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=streamwest-1629/wiki/1
+<!-- Make Issue in Issue and Improve project -->
 [bugfix@issue_and_improve]:https://github.com/streamwest-1629/wiki/issues/new?labels=bug&template=bugfix.md&title=bugfix%2F%3C%E5%95%8F%E9%A1%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E%3E&projects=streamwest-1629/wiki/1
+
