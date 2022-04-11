@@ -3,7 +3,7 @@
 
 ## Issue作成（各リポジトリごとにうまい具合に設定してください）
 | Project \ Issue | improve | draft | bugfix |
-| :-- | :-: | :-: |
+| :-- | :-: | :-: | :-: |
 | [issue and improve][@issue_and_improve] | [Make Issue][improve@issue_and_improve] | [Make Issue][draft@issue_and_improve] | [Make Issue][bugfix@issue_and_improve] |
 
 ## テンプレートとして使用したらはじめにすること
