@@ -24,7 +24,8 @@
 		"budparr.language-hugo-vscode",
 		"rusnasonov.vscode-hugo",
 		"bierner.markdown-emoji",
-		"bierner.markdown-mermaid"
+		"bierner.markdown-mermaid",
+		"onatm.open-in-new-window"
 	]
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
