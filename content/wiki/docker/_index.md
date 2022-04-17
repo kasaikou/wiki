@@ -4,7 +4,7 @@ date: 2022-04-17T06:32:42Z
 draft: false
 type: docs
 tags: []
-categories: ["docker"]
+categories: ["Docker"]
 ---
 
 # 前書き・概要
