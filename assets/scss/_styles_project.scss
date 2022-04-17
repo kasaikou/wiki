@@ -35,23 +35,24 @@ h1 {
 
 .showcase {
     display: grid;
-    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-columns: 170px 170px 170px 170px;
     justify-content: center;
 
     a {
         display: block;
-        width: 120px;
-        height: 150px;
+        width: 150px;
+        height: 180px;
 
         text-align: center;
         justify-content: center;
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 130px;
+            height: 130px;
             margin: 5px;
         }
 
+        font-weight: 900;
     }
 }
 

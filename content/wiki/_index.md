@@ -6,5 +6,3 @@ menu:
     main:
         waight: 10
 ---
-
-W
