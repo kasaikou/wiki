@@ -22,17 +22,13 @@ description:
 {{% blocks/cover color="white" height="full" %}}
 <h2 class="text-center pb-3">Categories</h2>
 <div class='showcase'>
-    <a href='#'>
-        <img src="./img/golang.svg">
-        <strong class="text-center d-block">Golang</strong>
-    </a>
-    <a href='#'>
-        <img src="./img/amazonaws.svg">
-        <strong class="text-center d-block">AWS</strong>
-    </a>
-    <a href='#'>
+    <a href='{{% relref "/categories/docker" %}}'>
         <img src="./img/docker.svg">
         <strong class="text-center d-block">Docker</strong>
+    </a>
+    <a href='{{% relref "categories/golang" %}}'>
+        <img src="./img/golang.svg">
+        <strong class="text-center d-block">Golang</strong>
     </a>
 </div>
 {{% /blocks/cover %}}
