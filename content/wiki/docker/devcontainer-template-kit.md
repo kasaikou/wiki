@@ -4,6 +4,6 @@ date: 2022-04-11T12:44:32Z
 draft: false
 type: docs
 tags: []
-category: "docker"
+categories: ["Docker"]
 ---
 とりあえず
