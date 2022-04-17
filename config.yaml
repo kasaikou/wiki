@@ -35,7 +35,8 @@ params:
     navbar_logo: false
     feedback: # todo: arrange it and enable
       enable: false
-    readingtime: true
+    readingtime: 
+      enable: true
   links:
     developer:
       - name: Twitter
