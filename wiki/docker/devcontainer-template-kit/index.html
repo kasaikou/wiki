@@ -1,0 +1,275 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.92.0">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/wiki/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/wiki/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/wiki/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/wiki/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/wiki/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/wiki/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/wiki/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/wiki/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/wiki/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/wiki/favicons/android-192x192.png sizes=192x192>
+<title>Develop container (Remote Container）使用時のテンプレート集 | Kasai wiki</title>
+<meta name=description content="Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．">
+<meta property="og:title" content="Develop container (Remote Container）使用時のテンプレート集">
+<meta property="og:description" content="Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/"><meta property="article:section" content="wiki">
+<meta property="article:published_time" content="2022-04-11T12:44:32+00:00">
+<meta property="article:modified_time" content="2022-04-11T12:44:32+00:00">
+<meta itemprop=name content="Develop container (Remote Container）使用時のテンプレート集">
+<meta itemprop=description content="Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．"><meta itemprop=datePublished content="2022-04-11T12:44:32+00:00">
+<meta itemprop=dateModified content="2022-04-11T12:44:32+00:00">
+<meta itemprop=wordCount content="162">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Develop container (Remote Container）使用時のテンプレート集">
+<meta name=twitter:description content="Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．">
+<link rel=preload href=/wiki/scss/main.min.d9c9b298744340cc6417c3652f20bb2483b18464419001cead53ac2d797a2b61.css as=style>
+<link href=/wiki/scss/main.min.d9c9b298744340cc6417c3652f20bb2483b18464419001cead53ac2d797a2b61.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/wiki/>
+<span class=navbar-logo></span><span class=font-weight-bold>Kasai wiki</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/wiki/about/><span>About</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/wiki/wiki/><span class=active>Public Wiki</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-wikiwiki-li>
+<a href=/wiki/wiki/ title=公開済み class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-wikiwiki><span>Public Wiki</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-wikiwikidocker-li>
+<a href=/wiki/wiki/docker/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-wikiwikidocker><span>Docker</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-wikiwikidockerdevcontainer-template-kit-li>
+<a href=/wiki/wiki/docker/devcontainer-template-kit/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-wikiwikidockerdevcontainer-template-kit><span class=td-sidebar-nav-active-item>Develop container (Remote Container）使用時のテンプレート集</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/streamwest-1629/wiki/tree/main/content/en/wiki/docker/devcontainer-template-kit.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/streamwest-1629/wiki/edit/main/content/en/wiki/docker/devcontainer-template-kit.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/streamwest-1629/wiki/new/main/content/en/wiki/docker/devcontainer-template-kit.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/streamwest-1629/wiki/issues/new?title=Develop%20container%20%28Remote%20Container%ef%bc%89%e4%bd%bf%e7%94%a8%e6%99%82%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e9%9b%86" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+</div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#参考資料>参考資料</a></li>
+</ul>
+<ul>
+<li><a href=#s3バケットのマウント方法dockerfileから見たとき>S3バケットのマウント方法（Dockerfileから見たとき）</a></li>
+</ul>
+<ul>
+<li><a href=#golangのライブラリ依存>Golangのライブラリ依存</a></li>
+</ul>
+<ul>
+<li><a href=#gpuの有効化>GPUの有効化</a></li>
+</ul>
+<ul>
+<li><a href=#run-apt-get-install--y--を行う前に><code>RUN apt-get install -y ...</code> を行う前に</a></li>
+<li><a href=#各-run-におけるキャッシュ>各 <code>RUN</code> におけるキャッシュ</a></li>
+</ul>
+</nav></div>
+<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<h5 class=taxonomy-title>Categories</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://streamwest-1629.github.io/wiki/categories/docker/ data-taxonomy-term=docker><span class=taxonomy-label>Docker</span><span class=taxonomy-count>2</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://streamwest-1629.github.io/wiki/wiki/>Public Wiki</a>
+</li>
+<li class=breadcrumb-item>
+<a href=https://streamwest-1629.github.io/wiki/wiki/docker/>Docker</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/>Develop container (Remote Container）使用時のテンプレート集</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Develop container (Remote Container）使用時のテンプレート集</h1>
+<div class=lead>Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-categories">
+<h5 class=taxonomy-title>Categories:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://streamwest-1629.github.io/wiki/categories/docker/ data-taxonomy-term=docker><span class=taxonomy-label>Docker</span></a></li>
+</ul>
+</div>
+<p class=reading-time><i class="fa fa-clock" aria-hidden=true></i>&nbsp; less than a minute &nbsp;</p>
+</header>
+<h1 id=前書き概要w>前書き・概要W</h1>
+<p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．</p>
+<p>Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．</p>
+<h2 id=参考資料>参考資料</h2>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>概要（タイトル）</th>
+<th style=text-align:left>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>DeepLab内で実装されているDockerfile</td>
+<td style=text-align:left><a href=https://github.com/StreamWest-1629/DeepLab>https://github.com/StreamWest-1629/DeepLab</a></td>
+</tr>
+<tr>
+<td style=text-align:left>Dockerfileリファレンス（日本語訳）</td>
+<td style=text-align:left><a href=https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/>https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/</a></td>
+</tr>
+<tr>
+<td style=text-align:left>Composeファイルリファレンス（バージョン3，日本語訳）</td>
+<td style=text-align:left><a href=https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/>https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id=あると便利な環境変数>あると便利な環境変数</h1>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>環境変数</th>
+<th style=text-align:left>内容</th>
+<th style=text-align:center>入れておくべき値</th>
+<th style=text-align:left>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left><code>DEBIAN_FRONTEND</code></td>
+<td style=text-align:left>インタラクティブな動作についての環境変数</td>
+<td style=text-align:center><code>nointeractive</code></td>
+<td style=text-align:left>-</td>
+</tr>
+<tr>
+<td style=text-align:left><code>TZ</code></td>
+<td style=text-align:left>タイムゾーン</td>
+<td style=text-align:center>各自のタイムゾーン（例: <code>Asia/Tokyo</code>）</td>
+<td style=text-align:left>ARGとして指定しておくのはアリ（面倒だから固定にしがちだけど）</td>
+</tr>
+</tbody>
+</table>
+<p>よって，まとめると以下のようになる．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#ff79c6>ARG</span> <span style=color:#8be9fd;font-style:italic>tz</span><span style=color:#ff79c6>=</span>Asia/Tokyo
+<span style=color:#ff79c6>ENV</span> <span style=color:#8be9fd;font-style:italic>DEBIAN_FRONTEND</span><span style=color:#ff79c6>=</span>nointeractive <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    <span style=color:#8be9fd;font-style:italic>TZ</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>${</span><span style=color:#8be9fd;font-style:italic>tz</span><span style=color:#f1fa8c>}</span>
+</code></pre></div><h1 id=ツールのインストールに関する話題>ツールのインストールに関する話題</h1>
+<h2 id=s3バケットのマウント方法dockerfileから見たとき>S3バケットのマウント方法（Dockerfileから見たとき）</h2>
+<p>Dockerにはボリュームドライバーなるものがあるらしいがよくわからなかったので，普通に　<code>s3fs</code> または <code>goofys</code> をDockerfile内でインストールした方が正直手っ取り早い．私は <code>goofys</code> を使うことにした．</p>
+<p>goofysに関して，Golangで開発が進んでいるので，気持ち的にはGolangをインストールしてから <code>go install</code> を実行したいところだ．しかし，安定的な動作が他のパッケージと比べても割と低い印象（あくまで個人の感想です）なので，バイナリを直接ダウンロードした方が速い．</p>
+<p>内部では <code>fuse</code> などを使用しているのでしっかりインストールする．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#ff79c6>ARG</span> <span style=color:#8be9fd;font-style:italic>goofys_version</span><span style=color:#ff79c6>=</span><span style=color:#bd93f9>0</span>.24.0
+
+<span style=color:#ff79c6>RUN</span> apt-get install -y wget fuse-emulator-utils fuse <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    wget https://github.com/kahing/goofys/releases/download/v<span style=color:#f1fa8c>${</span><span style=color:#8be9fd;font-style:italic>goofys_version</span><span style=color:#f1fa8c>}</span>/goofys -P /usr/local/bin/ <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    chmod +x /usr/local/bin/goofys
+</code></pre></div><h1 id=マルチステージビルドに関する話題>マルチステージビルドに関する話題</h1>
+<h2 id=golangのライブラリ依存>Golangのライブラリ依存</h2>
+<p>少なくともGolangに関して，ビルド用コンテナでビルドしたバイナリが Official Imageである <code>alpine</code> で実行する際にエラーが発生するという問題が起きるようだ．</p>
+<p>どうやら <code>alpine</code> においてライブラリが不足していることによって発生する問題のようである．</p>
+<p>一時しのぎとして以下のコマンドを実行することで解決するが，もっとスマートな方法があればよいと思う．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#ff79c6>RUN</span> mkdir /lib64 <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+</code></pre></div><p>ネット上で探す対応策は割とこの方法が多いように感じた．他の方法として， <code>GOARCH=amd64</code> でビルドするという方法も試したが，AWS上で実行に失敗しているためいまいち有効な手ではないように感じた．</p>
+<h1 id=docker-composeymlでの話題>docker-compose.ymlでの話題</h1>
+<h2 id=gpuの有効化>GPUの有効化</h2>
+<p>ほぼコピペ．<code>count</code> のところでGPUの指定をすることができるが，そもそもGPUを使うコンテナをバカスカ建てることも少ないので <code>all</code> にしがち．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>services</span>:
+  <span style=color:#ff79c6>gpu_container</span>:
+  　...
+    <span style=color:#ff79c6>deploy</span>:
+      <span style=color:#ff79c6>resources</span>:
+        <span style=color:#ff79c6>reservations</span>:
+          <span style=color:#ff79c6>devices</span>:
+            - <span style=color:#ff79c6>driver</span>: nvidia
+              <span style=color:#ff79c6>count</span>: all
+              <span style=color:#ff79c6>capabilities</span>: [<span style=color:#f1fa8c>&#34;gpu&#34;</span>]
+</code></pre></div><h1 id=ビルド高速化の話題>ビルド高速化の話題</h1>
+<h2 id=run-apt-get-install--y--を行う前に><code>RUN apt-get install -y ...</code> を行う前に</h2>
+<p>近くのリージョンの日本サーバーを用いた方が物理的に距離が近いのでインストールが速い．</p>
+<p>しかし，近隣のサーバーをmirrorsで検索をかけるとhttp通信以外を弾く環境などで上手く回らない可能性があるため，厳密に指定した方が良いことの方が多そうである．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#ff79c6>RUN</span> sed -i <span style=color:#f1fa8c>&#39;s@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g&#39;</span> /etc/apt/sources.list <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    apt-get update <span style=color:#ff79c6>&amp;&amp;</span> <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    apt-get install -y <span style=color:#ff79c6>(</span>APT packages...<span style=color:#ff79c6>)</span>
+</code></pre></div><h2 id=各-run-におけるキャッシュ>各 <code>RUN</code> におけるキャッシュ</h2>
+<p><code>npm</code> や <code>pip</code> など，各言語に応じて様々なキャッシュ方法があると思うが，Dockerfileの <code>RUN</code> 内で <code>--mount</code> 引数を与えることによってキャッシュを持たせることができ，ビルドの高速化を図ることができる．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#ff79c6>RUN</span> --mount<span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>type</span><span style=color:#ff79c6>=</span>cache,target<span style=color:#ff79c6>=</span>/root/.cache/pip <span style=color:#f1fa8c>\
+</span><span style=color:#f1fa8c></span>    python3 -m pip install -r requirements.txt
+</code></pre></div><p>各言語でどのようなキャッシュを持たせられるのかについては，Github Actionsのキャッシュ機能である <a href=https://github.com/actions/cache><code>actions/cache</code></a> のImplementation Examplesでわかりやすく解説しているので参考にした方が良い．</p>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://twitter.com/streamwest1629 aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Github aria-label=Github>
+<a class=text-white target=_blank rel=noopener href=https://github.com/streamwest-1629 aria-label=Github>
+<i class="fab fa-github"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Kasai Koji (streamwest1629) All Rights Reserved</small>
+<p class=mt-2><a href=/wiki/about/>About Me</a></p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/wiki/js/tabpane-persist.js></script>
+<script src=/wiki/js/main.min.e361027b03a3d336c311b564c2e244f06b89a1c2abfff6400b7fbc07fcecd74f.js integrity="sha256-42ECewOj0zbDEbVkwuJE8GuJocKr//ZAC3+8B/zs108=" crossorigin=anonymous></script>
+</body>
+</html>

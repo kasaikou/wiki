@@ -1,0 +1,119 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Docker</title><link>https://streamwest-1629.github.io/wiki/categories/docker/</link><description>Recent content in Docker on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Apr 2022 06:32:42 +0000</lastBuildDate><atom:link href="https://streamwest-1629.github.io/wiki/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Docker</title><link>https://streamwest-1629.github.io/wiki/wiki/docker/</link><pubDate>Sun, 17 Apr 2022 06:32:42 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/docker/</guid><description>
+&lt;h1 id="前書き概要">前書き・概要&lt;/h1>
+&lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
+&lt;h2 id="参考資料">参考資料&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">概要（タイトル）&lt;/th>
+&lt;th style="text-align:left">URL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Dockerfileリファレンス（日本語訳）&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/">https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Composeファイルリファレンス（バージョン3，日本語訳）&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/">https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Wiki: Develop container (Remote Container）使用時のテンプレート集</title><link>https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/</link><pubDate>Mon, 11 Apr 2022 12:44:32 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/</guid><description>
+&lt;h1 id="前書き概要w">前書き・概要W&lt;/h1>
+&lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
+&lt;p>Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．&lt;/p>
+&lt;h2 id="参考資料">参考資料&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">概要（タイトル）&lt;/th>
+&lt;th style="text-align:left">URL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">DeepLab内で実装されているDockerfile&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://github.com/StreamWest-1629/DeepLab">https://github.com/StreamWest-1629/DeepLab&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Dockerfileリファレンス（日本語訳）&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/">https://matsuand.github.io/docs.docker.jp.onthefly/engine/reference/builder/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Composeファイルリファレンス（バージョン3，日本語訳）&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/">https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="あると便利な環境変数">あると便利な環境変数&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">環境変数&lt;/th>
+&lt;th style="text-align:left">内容&lt;/th>
+&lt;th style="text-align:center">入れておくべき値&lt;/th>
+&lt;th style="text-align:left">備考&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;code>DEBIAN_FRONTEND&lt;/code>&lt;/td>
+&lt;td style="text-align:left">インタラクティブな動作についての環境変数&lt;/td>
+&lt;td style="text-align:center">&lt;code>nointeractive&lt;/code>&lt;/td>
+&lt;td style="text-align:left">-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;code>TZ&lt;/code>&lt;/td>
+&lt;td style="text-align:left">タイムゾーン&lt;/td>
+&lt;td style="text-align:center">各自のタイムゾーン（例: &lt;code>Asia/Tokyo&lt;/code>）&lt;/td>
+&lt;td style="text-align:left">ARGとして指定しておくのはアリ（面倒だから固定にしがちだけど）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>よって，まとめると以下のようになる．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#ff79c6">ARG&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">tz&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>Asia/Tokyo
+&lt;span style="color:#ff79c6">ENV&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">DEBIAN_FRONTEND&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>nointeractive &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">TZ&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">${&lt;/span>&lt;span style="color:#8be9fd;font-style:italic">tz&lt;/span>&lt;span style="color:#f1fa8c">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="ツールのインストールに関する話題">ツールのインストールに関する話題&lt;/h1>
+&lt;h2 id="s3バケットのマウント方法dockerfileから見たとき">S3バケットのマウント方法（Dockerfileから見たとき）&lt;/h2>
+&lt;p>Dockerにはボリュームドライバーなるものがあるらしいがよくわからなかったので，普通に　&lt;code>s3fs&lt;/code> または &lt;code>goofys&lt;/code> をDockerfile内でインストールした方が正直手っ取り早い．私は &lt;code>goofys&lt;/code> を使うことにした．&lt;/p>
+&lt;p>goofysに関して，Golangで開発が進んでいるので，気持ち的にはGolangをインストールしてから &lt;code>go install&lt;/code> を実行したいところだ．しかし，安定的な動作が他のパッケージと比べても割と低い印象（あくまで個人の感想です）なので，バイナリを直接ダウンロードした方が速い．&lt;/p>
+&lt;p>内部では &lt;code>fuse&lt;/code> などを使用しているのでしっかりインストールする．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#ff79c6">ARG&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">goofys_version&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#bd93f9">0&lt;/span>.24.0
+&lt;span style="color:#ff79c6">RUN&lt;/span> apt-get install -y wget fuse-emulator-utils fuse &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> wget https://github.com/kahing/goofys/releases/download/v&lt;span style="color:#f1fa8c">${&lt;/span>&lt;span style="color:#8be9fd;font-style:italic">goofys_version&lt;/span>&lt;span style="color:#f1fa8c">}&lt;/span>/goofys -P /usr/local/bin/ &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> chmod +x /usr/local/bin/goofys
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="マルチステージビルドに関する話題">マルチステージビルドに関する話題&lt;/h1>
+&lt;h2 id="golangのライブラリ依存">Golangのライブラリ依存&lt;/h2>
+&lt;p>少なくともGolangに関して，ビルド用コンテナでビルドしたバイナリが Official Imageである &lt;code>alpine&lt;/code> で実行する際にエラーが発生するという問題が起きるようだ．&lt;/p>
+&lt;p>どうやら &lt;code>alpine&lt;/code> においてライブラリが不足していることによって発生する問題のようである．&lt;/p>
+&lt;p>一時しのぎとして以下のコマンドを実行することで解決するが，もっとスマートな方法があればよいと思う．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#ff79c6">RUN&lt;/span> mkdir /lib64 &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>ネット上で探す対応策は割とこの方法が多いように感じた．他の方法として， &lt;code>GOARCH=amd64&lt;/code> でビルドするという方法も試したが，AWS上で実行に失敗しているためいまいち有効な手ではないように感じた．&lt;/p>
+&lt;h1 id="docker-composeymlでの話題">docker-compose.ymlでの話題&lt;/h1>
+&lt;h2 id="gpuの有効化">GPUの有効化&lt;/h2>
+&lt;p>ほぼコピペ．&lt;code>count&lt;/code> のところでGPUの指定をすることができるが，そもそもGPUを使うコンテナをバカスカ建てることも少ないので &lt;code>all&lt;/code> にしがち．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#ff79c6">services&lt;/span>:
+&lt;span style="color:#ff79c6">gpu_container&lt;/span>:
+　...
+&lt;span style="color:#ff79c6">deploy&lt;/span>:
+&lt;span style="color:#ff79c6">resources&lt;/span>:
+&lt;span style="color:#ff79c6">reservations&lt;/span>:
+&lt;span style="color:#ff79c6">devices&lt;/span>:
+- &lt;span style="color:#ff79c6">driver&lt;/span>: nvidia
+&lt;span style="color:#ff79c6">count&lt;/span>: all
+&lt;span style="color:#ff79c6">capabilities&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;gpu&amp;#34;&lt;/span>]
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="ビルド高速化の話題">ビルド高速化の話題&lt;/h1>
+&lt;h2 id="run-apt-get-install--y--を行う前に">&lt;code>RUN apt-get install -y ...&lt;/code> を行う前に&lt;/h2>
+&lt;p>近くのリージョンの日本サーバーを用いた方が物理的に距離が近いのでインストールが速い．&lt;/p>
+&lt;p>しかし，近隣のサーバーをmirrorsで検索をかけるとhttp通信以外を弾く環境などで上手く回らない可能性があるため，厳密に指定した方が良いことの方が多そうである．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#ff79c6">RUN&lt;/span> sed -i &lt;span style="color:#f1fa8c">&amp;#39;s@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g&amp;#39;&lt;/span> /etc/apt/sources.list &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> apt-get update &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> apt-get install -y &lt;span style="color:#ff79c6">(&lt;/span>APT packages...&lt;span style="color:#ff79c6">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="各-run-におけるキャッシュ">各 &lt;code>RUN&lt;/code> におけるキャッシュ&lt;/h2>
+&lt;p>&lt;code>npm&lt;/code> や &lt;code>pip&lt;/code> など，各言語に応じて様々なキャッシュ方法があると思うが，Dockerfileの &lt;code>RUN&lt;/code> 内で &lt;code>--mount&lt;/code> 引数を与えることによってキャッシュを持たせることができ，ビルドの高速化を図ることができる．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#ff79c6">RUN&lt;/span> --mount&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#8be9fd;font-style:italic">type&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>cache,target&lt;span style="color:#ff79c6">=&lt;/span>/root/.cache/pip &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> python3 -m pip install -r requirements.txt
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>各言語でどのようなキャッシュを持たせられるのかについては，Github Actionsのキャッシュ機能である &lt;a href="https://github.com/actions/cache">&lt;code>actions/cache&lt;/code>&lt;/a> のImplementation Examplesでわかりやすく解説しているので参考にした方が良い．&lt;/p></description></item></channel></rss>
