@@ -1,7 +1,7 @@
 ---
 title: "Golang"
 date: 2022-04-19T09:35:09Z
-draft: true
+draft: false
 type: docs
 tags: []
 categories: ["Golang"]
