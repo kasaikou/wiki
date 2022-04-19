@@ -5,6 +5,7 @@ draft: true
 type: docs
 tags: []
 categories: ["other"]
+description: {{ replace .Name "-" " " | title }}についての記事です．
 ---
 
 # 前書き・概要

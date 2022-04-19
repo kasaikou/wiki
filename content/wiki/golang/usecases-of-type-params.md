@@ -5,6 +5,7 @@ draft: true
 type: docs
 tags: []
 categories: ["Golang"]
+description: この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．
 ---
 
 # 前書き・概要
