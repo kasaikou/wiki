@@ -22,6 +22,9 @@ markup:
   highlight:
     style: dracula
     guessSyntax: true
+services:
+  googleAnalytics:
+    id: G-72WTY20R3Z
 params:
   copyright: Kasai Koji (streamwest1629)
   github_repo: https://github.com/streamwest-1629/wiki
