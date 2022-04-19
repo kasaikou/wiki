@@ -5,6 +5,7 @@ draft: false
 type: docs
 tags: []
 categories: ["Docker"]
+description: "Dockerについての記事です．"
 ---
 
 # 前書き・概要
