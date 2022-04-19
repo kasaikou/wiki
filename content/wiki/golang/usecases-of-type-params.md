@@ -1,5 +1,5 @@
 ---
-title: "Usage of Type Params"
+title: "型パラメータの使い方提案集"
 date: 2022-04-17T06:25:12Z
 draft: true
 type: docs
