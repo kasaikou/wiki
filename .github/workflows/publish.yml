@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - 19-improve/githubactions+github-pagesで公開用のページを作成する
+      - stg
 
 jobs:
   deploy:
