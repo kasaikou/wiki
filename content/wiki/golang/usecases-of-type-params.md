@@ -1,7 +1,7 @@
 ---
 title: "型パラメータの使い方提案集"
 date: 2022-04-17T06:25:12Z
-draft: true
+draft: false
 type: docs
 tags: []
 categories: ["Golang"]
