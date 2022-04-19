@@ -1,0 +1,78 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Golang</title><link>https://streamwest-1629.github.io/wiki/categories/golang/</link><description>Recent content in Golang on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 19 Apr 2022 09:35:09 +0000</lastBuildDate><atom:link href="https://streamwest-1629.github.io/wiki/categories/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Golang</title><link>https://streamwest-1629.github.io/wiki/wiki/golang/</link><pubDate>Tue, 19 Apr 2022 09:35:09 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/golang/</guid><description>
+&lt;h1 id="前書き概要">前書き・概要&lt;/h1>
+&lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
+&lt;h2 id="参考資料">参考資料&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">概要（タイトル）&lt;/th>
+&lt;th style="text-align:left">URL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">pkg.go.dev&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://pkg.go.dev/">https://pkg.go.dev/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Wiki: 型パラメータの使い方提案集</title><link>https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/</link><pubDate>Sun, 17 Apr 2022 06:25:12 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/</guid><description>
+&lt;h1 id="前書き概要">前書き・概要&lt;/h1>
+&lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
+&lt;p>この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．&lt;/p>
+&lt;h2 id="参考資料">参考資料&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">概要（タイトル）&lt;/th>
+&lt;th style="text-align:left">URL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">mattn/go-generics-example&lt;/td>
+&lt;td style="text-align:left">&lt;a href="https://github.com/mattn/go-generics-example">https://github.com/mattn/go-generics-example&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="アルゴリズム系">アルゴリズム系&lt;/h1>
+&lt;p>ボクが書くよりも人の書いたやつを見た方が速そう．&lt;/p>
+&lt;p>参考資料読んで．&lt;/p>
+&lt;h1 id="部分テスト分割インターフェイス">部分テスト分割インターフェイス&lt;/h1>
+&lt;p>SQL系で作りがちなインターフェイス．&lt;/p>
+&lt;p>あるプログラムを実装したときにそのプログラムをテストする際に必要な関数だけを型情報として与えることができる．&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">
+&lt;span style="color:#8be9fd;font-style:italic">type&lt;/span> SQLDriver[Exec &lt;span style="color:#8be9fd;font-style:italic">interface&lt;/span>{}] {
+&lt;span style="color:#6272a4">// make transaction
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> &lt;span style="color:#50fa7b">Tx&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span>(fn Exec) &lt;span style="color:#8be9fd">error&lt;/span>) (internalErr &lt;span style="color:#8be9fd">error&lt;/span>, err &lt;span style="color:#8be9fd">error&lt;/span>)
+&lt;span style="color:#6272a4">// close connection
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> &lt;span style="color:#50fa7b">Close&lt;/span>() &lt;span style="color:#8be9fd">error&lt;/span>
+}
+&lt;span style="color:#6272a4">// how to use in testing
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span>
+&lt;span style="color:#ff79c6">import&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;testing&amp;#34;&lt;/span>
+&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span> &lt;span style="color:#50fa7b">TestGetName&lt;/span>(t &lt;span style="color:#ff79c6">*&lt;/span>testing.T) {
+&lt;span style="color:#8be9fd;font-style:italic">type&lt;/span> TestSQLExec &lt;span style="color:#8be9fd;font-style:italic">interface&lt;/span> {
+&lt;span style="color:#50fa7b">GetName&lt;/span>(id &lt;span style="color:#8be9fd">string&lt;/span>) (name &lt;span style="color:#8be9fd">string&lt;/span>, err &lt;span style="color:#8be9fd">error&lt;/span>)
+}
+driver &lt;span style="color:#ff79c6">:=&lt;/span> SQLDriver[TestSQLExec](&lt;span style="color:#6272a4">/* set sql driver instance */&lt;/span>)
+&lt;span style="color:#ff79c6">defer&lt;/span> driver.&lt;span style="color:#50fa7b">Close&lt;/span>()
+&lt;span style="color:#6272a4">// make transaction
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> internalErr, err &lt;span style="color:#ff79c6">:=&lt;/span> driver.&lt;span style="color:#50fa7b">Tx&lt;/span>(&lt;span style="color:#8be9fd;font-style:italic">func&lt;/span>(fn TestSQLExec) &lt;span style="color:#8be9fd">error&lt;/span> {
+&lt;span style="color:#6272a4">// test
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> testId, testName &lt;span style="color:#ff79c6">:=&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;test_id&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;test_name&amp;#34;&lt;/span>
+&lt;span style="color:#ff79c6">if&lt;/span> name, err &lt;span style="color:#ff79c6">:=&lt;/span> fn.&lt;span style="color:#50fa7b">GetName&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;test_id&amp;#34;&lt;/span>); err &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+&lt;span style="color:#ff79c6">return&lt;/span> err
+} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> name &lt;span style="color:#ff79c6">!=&lt;/span> testName {
+&lt;span style="color:#ff79c6">return&lt;/span> errors.&lt;span style="color:#50fa7b">New&lt;/span>(&lt;span style="color:#f1fa8c">&amp;#34;returned name is not right&amp;#34;&lt;/span>)
+}
+&lt;span style="color:#ff79c6">return&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span>
+})
+&lt;span style="color:#ff79c6">if&lt;/span> internalErr &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+t.&lt;span style="color:#50fa7b">Log&lt;/span>(internalErr.&lt;span style="color:#50fa7b">Error&lt;/span>())
+t.&lt;span style="color:#50fa7b">Fail&lt;/span>()
+} &lt;span style="color:#ff79c6">else&lt;/span> &lt;span style="color:#ff79c6">if&lt;/span> err &lt;span style="color:#ff79c6">!=&lt;/span> &lt;span style="color:#ff79c6">nil&lt;/span> {
+t.&lt;span style="color:#50fa7b">Log&lt;/span>(err.&lt;span style="color:#50fa7b">Error&lt;/span>())
+t.&lt;span style="color:#50fa7b">Fail&lt;/span>()
+}
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

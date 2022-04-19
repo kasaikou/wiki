@@ -1,0 +1,233 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.92.0">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/wiki/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/wiki/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/wiki/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/wiki/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/wiki/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/wiki/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/wiki/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/wiki/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/wiki/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/wiki/favicons/android-192x192.png sizes=192x192>
+<title>型パラメータの使い方提案集 | Kasai wiki</title>
+<meta name=description content="この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．">
+<meta property="og:title" content="型パラメータの使い方提案集">
+<meta property="og:description" content="この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/"><meta property="article:section" content="wiki">
+<meta property="article:published_time" content="2022-04-17T06:25:12+00:00">
+<meta property="article:modified_time" content="2022-04-17T06:25:12+00:00">
+<meta itemprop=name content="型パラメータの使い方提案集">
+<meta itemprop=description content="この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．"><meta itemprop=datePublished content="2022-04-17T06:25:12+00:00">
+<meta itemprop=dateModified content="2022-04-17T06:25:12+00:00">
+<meta itemprop=wordCount content="130">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="型パラメータの使い方提案集">
+<meta name=twitter:description content="この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．">
+<link rel=preload href=/wiki/scss/main.min.d9c9b298744340cc6417c3652f20bb2483b18464419001cead53ac2d797a2b61.css as=style>
+<link href=/wiki/scss/main.min.d9c9b298744340cc6417c3652f20bb2483b18464419001cead53ac2d797a2b61.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/wiki/>
+<span class=navbar-logo></span><span class=font-weight-bold>Kasai wiki</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/wiki/about/><span>About</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/wiki/wiki/><span class=active>Public Wiki</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-wikiwiki-li>
+<a href=/wiki/wiki/ title=公開済み class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-wikiwiki><span>Public Wiki</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-wikiwikigolang-li>
+<a href=/wiki/wiki/golang/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-wikiwikigolang><span>Golang</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-wikiwikigolangusecases-of-type-params-li>
+<a href=/wiki/wiki/golang/usecases-of-type-params/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-wikiwikigolangusecases-of-type-params><span class=td-sidebar-nav-active-item>型パラメータの使い方提案集</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-wikiwikidocker-li>
+<a href=/wiki/wiki/docker/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-wikiwikidocker><span>Docker</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-wikiwikidockerdevcontainer-template-kit-li>
+<a href=/wiki/wiki/docker/devcontainer-template-kit/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-wikiwikidockerdevcontainer-template-kit><span>Develop container (Remote Container）使用時のテンプレート集</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/streamwest-1629/wiki/tree/main/content/en/wiki/golang/usecases-of-type-params.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/streamwest-1629/wiki/edit/main/content/en/wiki/golang/usecases-of-type-params.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/streamwest-1629/wiki/new/main/content/en/wiki/golang/usecases-of-type-params.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/streamwest-1629/wiki/issues/new?title=%e5%9e%8b%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e6%8f%90%e6%a1%88%e9%9b%86" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<h5 class=taxonomy-title>Categories</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://streamwest-1629.github.io/wiki/categories/docker/ data-taxonomy-term=docker><span class=taxonomy-label>Docker</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://streamwest-1629.github.io/wiki/categories/golang/ data-taxonomy-term=golang><span class=taxonomy-label>Golang</span><span class=taxonomy-count>2</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://streamwest-1629.github.io/wiki/wiki/>Public Wiki</a>
+</li>
+<li class=breadcrumb-item>
+<a href=https://streamwest-1629.github.io/wiki/wiki/golang/>Golang</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/>型パラメータの使い方提案集</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>型パラメータの使い方提案集</h1>
+<div class=lead>この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-categories">
+<h5 class=taxonomy-title>Categories:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://streamwest-1629.github.io/wiki/categories/golang/ data-taxonomy-term=golang><span class=taxonomy-label>Golang</span></a></li>
+</ul>
+</div>
+<p class=reading-time><i class="fa fa-clock" aria-hidden=true></i>&nbsp; less than a minute &nbsp;</p>
+</header>
+<h1 id=前書き概要>前書き・概要</h1>
+<p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．</p>
+<p>この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．</p>
+<h2 id=参考資料>参考資料</h2>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>概要（タイトル）</th>
+<th style=text-align:left>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>mattn/go-generics-example</td>
+<td style=text-align:left><a href=https://github.com/mattn/go-generics-example>https://github.com/mattn/go-generics-example</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id=アルゴリズム系>アルゴリズム系</h1>
+<p>ボクが書くよりも人の書いたやつを見た方が速そう．</p>
+<p>参考資料読んで．</p>
+<h1 id=部分テスト分割インターフェイス>部分テスト分割インターフェイス</h1>
+<p>SQL系で作りがちなインターフェイス．</p>
+<p>あるプログラムを実装したときにそのプログラムをテストする際に必要な関数だけを型情報として与えることができる．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go>
+<span style=color:#8be9fd;font-style:italic>type</span> SQLDriver[Exec <span style=color:#8be9fd;font-style:italic>interface</span>{}] {
+    <span style=color:#6272a4>// make transaction
+</span><span style=color:#6272a4></span>    <span style=color:#50fa7b>Tx</span>(<span style=color:#8be9fd;font-style:italic>func</span>(fn Exec) <span style=color:#8be9fd>error</span>) (internalErr <span style=color:#8be9fd>error</span>, err <span style=color:#8be9fd>error</span>)
+    <span style=color:#6272a4>// close connection
+</span><span style=color:#6272a4></span>    <span style=color:#50fa7b>Close</span>() <span style=color:#8be9fd>error</span>
+}
+
+<span style=color:#6272a4>// how to use in testing
+</span><span style=color:#6272a4></span>
+<span style=color:#ff79c6>import</span> <span style=color:#f1fa8c>&#34;testing&#34;</span>
+
+<span style=color:#8be9fd;font-style:italic>func</span> <span style=color:#50fa7b>TestGetName</span>(t <span style=color:#ff79c6>*</span>testing.T) {
+    <span style=color:#8be9fd;font-style:italic>type</span> TestSQLExec <span style=color:#8be9fd;font-style:italic>interface</span> {
+        <span style=color:#50fa7b>GetName</span>(id <span style=color:#8be9fd>string</span>) (name <span style=color:#8be9fd>string</span>, err <span style=color:#8be9fd>error</span>)
+    }
+    
+    driver <span style=color:#ff79c6>:=</span> SQLDriver[TestSQLExec](<span style=color:#6272a4>/* set sql driver instance */</span>)
+    <span style=color:#ff79c6>defer</span> driver.<span style=color:#50fa7b>Close</span>()
+
+    <span style=color:#6272a4>// make transaction
+</span><span style=color:#6272a4></span>    internalErr, err <span style=color:#ff79c6>:=</span> driver.<span style=color:#50fa7b>Tx</span>(<span style=color:#8be9fd;font-style:italic>func</span>(fn TestSQLExec) <span style=color:#8be9fd>error</span> {
+
+        <span style=color:#6272a4>// test
+</span><span style=color:#6272a4></span>        testId, testName <span style=color:#ff79c6>:=</span> <span style=color:#f1fa8c>&#34;test_id&#34;</span>, <span style=color:#f1fa8c>&#34;test_name&#34;</span>
+        <span style=color:#ff79c6>if</span> name, err <span style=color:#ff79c6>:=</span> fn.<span style=color:#50fa7b>GetName</span>(<span style=color:#f1fa8c>&#34;test_id&#34;</span>); err <span style=color:#ff79c6>!=</span> <span style=color:#ff79c6>nil</span> {
+            <span style=color:#ff79c6>return</span> err
+        } <span style=color:#ff79c6>else</span> <span style=color:#ff79c6>if</span> name <span style=color:#ff79c6>!=</span> testName {
+            <span style=color:#ff79c6>return</span> errors.<span style=color:#50fa7b>New</span>(<span style=color:#f1fa8c>&#34;returned name is not right&#34;</span>)
+        }
+
+        <span style=color:#ff79c6>return</span> <span style=color:#ff79c6>nil</span>
+    })
+    <span style=color:#ff79c6>if</span> internalErr <span style=color:#ff79c6>!=</span> <span style=color:#ff79c6>nil</span> {
+        t.<span style=color:#50fa7b>Log</span>(internalErr.<span style=color:#50fa7b>Error</span>())
+        t.<span style=color:#50fa7b>Fail</span>()
+    } <span style=color:#ff79c6>else</span> <span style=color:#ff79c6>if</span> err <span style=color:#ff79c6>!=</span> <span style=color:#ff79c6>nil</span> {
+        t.<span style=color:#50fa7b>Log</span>(err.<span style=color:#50fa7b>Error</span>())
+        t.<span style=color:#50fa7b>Fail</span>()
+    }
+}
+</code></pre></div>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://twitter.com/streamwest1629 aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Github aria-label=Github>
+<a class=text-white target=_blank rel=noopener href=https://github.com/streamwest-1629 aria-label=Github>
+<i class="fab fa-github"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Kasai Koji (streamwest1629) All Rights Reserved</small>
+<p class=mt-2><a href=/wiki/about/>About Me</a></p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/wiki/js/tabpane-persist.js></script>
+<script src=/wiki/js/main.min.e361027b03a3d336c311b564c2e244f06b89a1c2abfff6400b7fbc07fcecd74f.js integrity="sha256-42ECewOj0zbDEbVkwuJE8GuJocKr//ZAC3+8B/zs108=" crossorigin=anonymous></script>
+</body>
+</html>
