@@ -19,7 +19,7 @@ jobs:
         with:
           hugo-version: '0.92.0'
       - name: Build Pages
-        run: hugo --minify
+        run: hugo --minify --baseURL https://streamwest-1629.github.io/wiki/
       - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
