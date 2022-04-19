@@ -5,4 +5,5 @@ type: docs
 menu:
     main:
         waight: 10
+description: 公開Wikiです．
 ---
