@@ -16,6 +16,13 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.92.0'
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - name: Install npm packages
+        run: npm ci
       - name: Build Pages
         run: hugo --minify --baseURL https://streamwest-1629.github.io/wiki/
       - name: Deploy Pages
