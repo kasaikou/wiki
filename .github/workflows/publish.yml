@@ -13,7 +13,7 @@ jobs:
       - name: Collect Submodules
         run: |
           /usr/bin/git submodule deinit -- content/private
-          /usr/bin/git submodule update --init --recursive -- theme/docsy
+          /usr/bin/git submodule update --init --recursive
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
