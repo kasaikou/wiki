@@ -1,5 +1,9 @@
 baseURL: /
-languageCode: en-us
+contentDir: content/ja
+languageCode: ja-jp
+defaultContentLanguage: "ja"
+defaultContentLanguageInSubdir: false
+enableRobotsTXT: true
 title: Kasai wiki
 theme: docsy
 enableEmoji: true
