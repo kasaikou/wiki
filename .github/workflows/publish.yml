@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Collect Submodules
-        run: /usr/bin/git submodule update --init --recursive
+        run: |
+          /usr/bin/git submodule deinit -- content/private
+          /usr/bin/git submodule update --init --recursive -- theme/docsy
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -28,6 +30,8 @@ jobs:
         run: hugo --minify --baseURL https://streamwest-1629.github.io/wiki/
         env:
           HUGO_ENV: production
+      - name: check root dir
+        run: ls -l -a .
       # - name: Deploy Pages
       #   uses: peaceiris/actions-gh-pages@v3
       #   with:
