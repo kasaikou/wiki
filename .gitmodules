@@ -2,3 +2,7 @@
 	path = themes/docsy
 	url = https://github.com/google/docsy
 	ignore = dirty
+[submodule "content/private"]
+	path = content/private
+	url = https://github.com/streamwest-1629/wiki-private
+	ignore = all
