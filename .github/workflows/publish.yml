@@ -26,7 +26,7 @@ jobs:
       - name: Install npm packages
         run: npm ci
       - name: Build Pages
-        run: hugo --minify --baseURL https://streamwest-1629.github.io/wiki/
+        run: hugo --minify --baseURL https://docs.kasai-san.dev/wiki/
         env:
           HUGO_ENV: production
       - name: check root dir
