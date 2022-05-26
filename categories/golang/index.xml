@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Golang</title><link>https://streamwest-1629.github.io/wiki/categories/golang/</link><description>Recent content in Golang on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Tue, 19 Apr 2022 09:35:09 +0000</lastBuildDate><atom:link href="https://streamwest-1629.github.io/wiki/categories/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Golang</title><link>https://streamwest-1629.github.io/wiki/wiki/golang/</link><pubDate>Tue, 19 Apr 2022 09:35:09 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/golang/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Golang</title><link>https://docs.kasai-san.dev/wiki/categories/golang/</link><description>Recent content in Golang on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Tue, 19 Apr 2022 09:35:09 +0000</lastBuildDate><atom:link href="https://docs.kasai-san.dev/wiki/categories/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Golang</title><link>https://docs.kasai-san.dev/wiki/wiki/golang/</link><pubDate>Tue, 19 Apr 2022 09:35:09 +0000</pubDate><guid>https://docs.kasai-san.dev/wiki/wiki/golang/</guid><description>
 &lt;h1 id="前書き概要">前書き・概要&lt;/h1>
 &lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
 &lt;h2 id="参考資料">参考資料&lt;/h2>
@@ -15,7 +15,7 @@
 &lt;td style="text-align:left">&lt;a href="https://pkg.go.dev/">https://pkg.go.dev/&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Wiki: 型パラメータの使い方提案集</title><link>https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/</link><pubDate>Sun, 17 Apr 2022 06:25:12 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/golang/usecases-of-type-params/</guid><description>
+&lt;/table></description></item><item><title>Wiki: 型パラメータの使い方提案集</title><link>https://docs.kasai-san.dev/wiki/wiki/golang/usecases-of-type-params/</link><pubDate>Sun, 17 Apr 2022 06:25:12 +0000</pubDate><guid>https://docs.kasai-san.dev/wiki/wiki/golang/usecases-of-type-params/</guid><description>
 &lt;h1 id="前書き概要">前書き・概要&lt;/h1>
 &lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
 &lt;p>この記事はGolangの1.18から追加された型パラメータの基本的なユースケースについて検討したものです．&lt;/p>

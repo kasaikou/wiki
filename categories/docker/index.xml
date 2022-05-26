@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Docker</title><link>https://streamwest-1629.github.io/wiki/categories/docker/</link><description>Recent content in Docker on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Sun, 17 Apr 2022 06:32:42 +0000</lastBuildDate><atom:link href="https://streamwest-1629.github.io/wiki/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Docker</title><link>https://streamwest-1629.github.io/wiki/wiki/docker/</link><pubDate>Sun, 17 Apr 2022 06:32:42 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/docker/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kasai wiki – Docker</title><link>https://docs.kasai-san.dev/wiki/categories/docker/</link><description>Recent content in Docker on Kasai wiki</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Sun, 17 Apr 2022 06:32:42 +0000</lastBuildDate><atom:link href="https://docs.kasai-san.dev/wiki/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Wiki: Docker</title><link>https://docs.kasai-san.dev/wiki/wiki/docker/</link><pubDate>Sun, 17 Apr 2022 06:32:42 +0000</pubDate><guid>https://docs.kasai-san.dev/wiki/wiki/docker/</guid><description>
 &lt;h1 id="前書き概要">前書き・概要&lt;/h1>
 &lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
 &lt;h2 id="参考資料">参考資料&lt;/h2>
@@ -19,7 +19,7 @@
 &lt;td style="text-align:left">&lt;a href="https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/">https://matsuand.github.io/docs.docker.jp.onthefly/compose/compose-file/compose-file-v3/&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Wiki: Develop container (Remote Container）使用時のテンプレート集</title><link>https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/</link><pubDate>Mon, 11 Apr 2022 12:44:32 +0000</pubDate><guid>https://streamwest-1629.github.io/wiki/wiki/docker/devcontainer-template-kit/</guid><description>
+&lt;/table></description></item><item><title>Wiki: Develop container (Remote Container）使用時のテンプレート集</title><link>https://docs.kasai-san.dev/wiki/wiki/docker/devcontainer-template-kit/</link><pubDate>Mon, 11 Apr 2022 12:44:32 +0000</pubDate><guid>https://docs.kasai-san.dev/wiki/wiki/docker/devcontainer-template-kit/</guid><description>
 &lt;h1 id="前書き概要w">前書き・概要W&lt;/h1>
 &lt;p>この記事はメモ書きであることをご理解ください．内容としては稚拙ですので，ご指摘やアドバイスあればぜひお声がけください．&lt;/p>
 &lt;p>Dockerfile，特に開発用コンテナ（ビルド用コンテナではない）を効率よくビルドするためのポイントをまとめたものです．&lt;/p>
